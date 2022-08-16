@@ -22,6 +22,10 @@ export class HeroesService {
     return this.http.get<Heroe>(`${this.base_url}/heroes/${id}`);
   }
 
+  getSurgerencias(termino:string):Observable<Heroe[]>| null{
+    return this.http.get<Heroe[]>(`${this.base_url}/heroes/?q=${termino}&_limit=6`);
+  }
+
 
   
 }
