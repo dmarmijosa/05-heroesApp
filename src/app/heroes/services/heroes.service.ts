@@ -26,6 +26,20 @@ export class HeroesService {
     return this.http.get<Heroe[]>(`${this.base_url}/heroes/?q=${termino}&_limit=6`);
   }
 
+  posHeroe(heroe:Heroe):Observable<Heroe>{
+    return this.http.post<Heroe>(`${this.base_url}/heroes`,heroe);
+  }
+  putHeroe(heroe:Heroe):Observable<Heroe>{
+    return this.http.put<Heroe>(`${this.base_url}/heroes/${heroe.id}`,heroe);
+  }
+  
+  deleteHeroe(id:String):Observable<any>{
+    return this.http.delete<any>(`${this.base_url}/heroes/${id}`);
+  }
+  
+
+
+
 
   
 }

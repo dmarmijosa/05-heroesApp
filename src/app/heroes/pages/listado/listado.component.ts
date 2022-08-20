@@ -20,12 +20,7 @@ export class ListadoComponent implements OnInit {
         next: resp=>{
           this.heroes=resp;
         },
-        error: err=>{
-          console.log('Error')
-        },
-        complete:(()=>{
-          console.log('Finalizado')
-        })
+       
       }
     );
   }
